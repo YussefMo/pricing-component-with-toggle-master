@@ -1,0 +1,263 @@
+/* main conf */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+:root
+{
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    --Linear-Gradient: hsl(236, 72%, 79%)40% , hsl(237, 63%, 64%);
+    --light-blue : hsl(237, 63%, 64%);
+    --pale-blue : hsl(236, 72%, 79%);
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+    --fw700: 700;
+}
+/* font bg asign */
+body
+{
+    font-family: "Montserrat", sans-serif;
+    background:
+    url(./images/bg-top.svg) no-repeat top right,
+    url(./images/bg-bottom.svg) no-repeat bottom left,
+    linear-gradient(to bottom,var(--Very-Light-Grayish-Blue)0%,var(--Very-Light-Grayish-Blue)100%);
+    background-size: 20% , 100% ,;
+}
+/* main container style */
+.maincont
+{
+    display: flex;
+    width: 100%;
+    height: 98vh;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* toggel style */
+.price-head
+{
+    width: 100%;
+    height: 10%;
+}
+.price-head h1
+{
+    font-size: 2.5rem;
+    font-weight: var(--fw700);
+    color: var(--Grayish-Blue);
+}
+.toggel-cont
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.toggel-button
+{
+    cursor: pointer;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    border-radius: 50px;
+    margin: 0px 20px;
+    background-color: var(--light-blue);
+    transition: all 500ms;
+}
+.toggel-circle
+{
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--Very-Light-Grayish-Blue);
+    transition: all 500ms;
+}
+/* toggle on */
+.toggel-button.active
+{
+    background-color: var(--pale-blue);
+}
+.toggel-button.active .toggel-circle
+{
+    left: calc(100% - 38px);
+}
+/* price card style */
+.card
+{
+    width: 25% ;
+    height: 62%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px var(--Light-Grayish-Blue);
+    transition: all 500ms;
+    color: var(--Dark-Grayish-Blue);
+}
+.card:hover
+{
+    transform: scale(1.02);
+}
+.Professional
+{
+    background: linear-gradient(to bottom , var(--Linear-Gradient));
+    height: 67%;
+}
+/* details style */
+.card p
+{
+    color: var(--Grayish-Blue);
+    width: 90%;
+    margin-left: 5%;
+    height: 50px;
+    border-top: solid 0.2px;
+    font-weight: var(--fw700);
+    padding-top: 20px;
+}
+.card h2
+{
+    border: none;
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+.Professional h2
+{
+    color: white;
+    margin-top: 53px;
+}
+.card h1
+{
+    margin: 20px 0px 50px 0px;
+    font-size: 5rem;
+    font-weight: var(--fw700);
+}
+.card h1 span
+{
+    font-size: 3rem;
+    margin-right: 10px;
+}
+.Professional h1
+{
+    color: white;
+}
+.card p:nth-child(3)
+{
+    font-size: 1.4rem;
+}
+.Professional p:nth-child(3)
+{
+    color: white;
+}
+.card p:nth-child(4)
+{
+    font-size: 1.4rem;
+}
+.Professional p:nth-child(4)
+{
+    color: white;
+}
+.card p:nth-child(5)
+{
+    font-size: 1.4rem;
+    border-bottom: solid 0.5px ;
+}
+.Professional p:nth-child(5)
+{
+    color: white;
+}
+.card button
+{
+    margin-top: 40px;
+    width: 85%;
+    height: 50px;
+    background: linear-gradient(to right ,var(--Linear-Gradient));
+    color: white;
+    font-weight: var(--fw700);
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 500ms;
+}
+.card button:hover
+{
+    background: white;
+    border: solid 0.5px var(--light-blue);
+    color: var(--light-blue);
+}
+.Professional button
+{
+    color: var(--light-blue);
+    background: white;
+}
+.Professional button:hover
+{
+    background: rgba(0,0,0,0);
+    color: white;
+    border: solid 0.5px white;
+}
+/* responsive styles */
+
+@media only screen and (max-width: 1440px)
+{
+    .card
+    {
+        width: 27%;
+    }
+    .card p
+    {
+        font-size: 1.2rem !important;
+    }
+    .card h1
+    {
+        font-size: 4.5rem;
+    }
+    .card h1 span
+    {
+        font-size: 2.5rem;
+    }
+}
+@media only screen and (max-width: 1024px)
+{
+    .card
+    {
+        width: 32%;
+    }
+}
+@media only screen and (max-width: 768px)
+{
+    .price-head
+    {
+        margin-top: 10%;
+    }
+    .toggel-cont
+    {
+        margin-bottom: 8%;
+    }
+    .maincont
+    {
+        height: 100%;
+    }
+    .card
+    {
+        margin: 25px 0px;
+        width: 65%;
+        height: 550px;
+    }
+    .attribution
+    {
+        margin-top: 5%;
+    }
+}
+@media only screen and (max-width: 480px)
+{
+    .card
+    {
+        width: 90%;
+    }
+}
